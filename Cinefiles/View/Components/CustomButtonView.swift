@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct Button : View {
+struct CustomButtonView : View {
     var text : String
     var color : Color
     
@@ -9,6 +9,7 @@ struct Button : View {
             Text(text)
                 .font(.system(size: 18, weight: .semibold))
         }
+        .frame(height: 35)
         .frame(maxWidth: .infinity)
         .padding(.vertical, 12)
         .background(color)
@@ -17,5 +18,5 @@ struct Button : View {
 }
 
 #Preview {
-    Button(text: "Botão", color: .blue)
+    CustomButtonView(text: "Botão", color: .blue)
 }
