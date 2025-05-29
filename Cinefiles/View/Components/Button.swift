@@ -12,6 +12,7 @@ struct Button : View {
         .frame(maxWidth: .infinity)
         .padding(.vertical, 12)
         .background(color)
+        .cornerRadius(12)
     }
 }
 
