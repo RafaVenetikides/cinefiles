@@ -38,13 +38,34 @@ struct LoginView : View {
                 }
             }
             
-            VStack {
+            VStack(spacing: 16) {
                 CustomButtonView(
                     crrPage: $crrPage,
                     text: "Entrar",
                     color: .customPink,
                     destinationView: .perfil
                 )
+                
+                Rectangle()
+                    .fill(Color(.systemGray))
+                    .frame(width: 300, height: 0.5)
+                
+                CustomButtonView(
+                    crrPage: $crrPage,
+                    text: "Entrar com Apple",
+                    color: .white,
+                    destinationView: .perfil,
+                    icon: "apple.logo"
+                )
+                
+                Button {
+                    showAlert.toggle()
+                } label: {
+                    Text("Não tenho cadastro")
+                        .font(.system(size: 16, weight: .semibold))
+                        .underline()
+                        .foregroundColor(.customPink)
+                }
             }
         }
         .frame(
