@@ -1,10 +1,3 @@
-//
-//  OnBoardingView.swift
-//  Cinefiles
-//
-//  Created by Rafael Venetikides on 29/05/25.
-//
-
 import SwiftUI
 
 struct OnBoardingView: View {
