@@ -10,18 +10,20 @@ struct CustomButtonView : View {
         Button {
             function()
         } label: {
-            if icon != "" {
-                Image(systemName: icon)
+            HStack{
+                if icon != "" {
+                    Image(systemName: icon)
+                        .foregroundStyle(.black)
+                }
+                Text(text)
+                    .font(.system(size: 18, weight: .semibold))
                     .foregroundStyle(.black)
             }
-            Text(text)
-                .font(.system(size: 18, weight: .semibold))
-                .foregroundStyle(.black)
-                .frame(height: 35)
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, 12)
-                .background(color)
-                .cornerRadius(12)
+            .frame(height: 35)
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 12)
+            .background(color)
+            .cornerRadius(12)
         }
     }
 }

@@ -82,3 +82,7 @@ struct LoginView : View {
         .background(.customDarkBlue)
     }
 }
+
+#Preview {
+    LoginView(crrProfilePage: .constant(.login))
+}
