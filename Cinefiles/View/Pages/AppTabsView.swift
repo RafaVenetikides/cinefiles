@@ -16,6 +16,7 @@ struct AppTabsView: View {
                 VStack(spacing: 0){
                     TabView(selection: $selectedTab) {
                         HomeView()
+                            .background(Color.clear)
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
                             .background(Color(.customDarkBlue))
                             .foregroundStyle(.white)
@@ -49,7 +50,7 @@ struct AppTabsView: View {
                     Rectangle()
                         .fill(Color.gray)
                         .frame(height: 1)
-                        .padding(.bottom, 93)
+                        .padding(.bottom, 83)
                 }
                 .ignoresSafeArea()
             }
