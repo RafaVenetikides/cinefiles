@@ -49,7 +49,6 @@ struct OnBoardingView: View {
                     ) {
                         showOnboarding = false
                     }
-                    
                     .padding(.horizontal, 60)
                     .padding(.bottom, 55)
                 }
