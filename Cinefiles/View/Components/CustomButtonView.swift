@@ -1,13 +1,19 @@
 import SwiftUI
 
 struct CustomButtonView : View {
+    @Binding var crrPage : Page
+    
     var text : String
     var color : Color
+    var destinationView : Page
     
     var body : some View {
-        VStack {
+        Button {
+            crrPage = destinationView
+        } label: {
             Text(text)
                 .font(.system(size: 18, weight: .semibold))
+                .foregroundStyle(.black)
         }
         .frame(height: 35)
         .frame(maxWidth: .infinity)
@@ -18,5 +24,10 @@ struct CustomButtonView : View {
 }
 
 #Preview {
-    CustomButtonView(text: "Botão", color: .blue)
+    CustomButtonView(
+        crrPage: .constant(.onboarding),
+        text: "Botão",
+        color: .customPink,
+        destinationView: .home
+    )
 }
