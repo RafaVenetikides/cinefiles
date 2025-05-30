@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AppTabsView: View {
     @State private var selectedTab = 0
+    @State var is_logado = false
     
     var body: some View {
         ZStack(alignment: .bottom){
@@ -32,7 +33,7 @@ struct AppTabsView: View {
                     }
                     .tag(1)
                 
-                Text("Perfil")
+                LoginView(crrPage: .constant(.tabs))
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .background(Color(.customDarkBlue))
                     .foregroundStyle(.white)

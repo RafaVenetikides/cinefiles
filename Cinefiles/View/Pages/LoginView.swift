@@ -43,7 +43,7 @@ struct LoginView : View {
                     crrPage: $crrPage,
                     text: "Entrar",
                     color: .customPink,
-                    destinationView: .perfil
+                    destinationView: .tabs
                 )
                 
                 Rectangle()
@@ -54,7 +54,7 @@ struct LoginView : View {
                     crrPage: $crrPage,
                     text: "Entrar com Apple",
                     color: .white,
-                    destinationView: .perfil,
+                    destinationView: .tabs,
                     icon: "apple.logo"
                 )
                 
@@ -79,6 +79,6 @@ struct LoginView : View {
 
 #Preview {
     LoginView(
-        crrPage: .constant(.login)
+        crrPage: .constant(.tabs)
     )
 }

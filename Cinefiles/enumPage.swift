@@ -1,6 +1,4 @@
 enum Page {
-    case home
+    case tabs
     case onboarding
-    case login
-    case perfil
 }

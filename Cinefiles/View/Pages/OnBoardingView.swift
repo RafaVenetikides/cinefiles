@@ -47,7 +47,7 @@ struct OnBoardingView: View {
                         crrPage: $crrPage,
                         text: "Vamos lá",
                         color: Color.customPink,
-                        destinationView: .home
+                        destinationView: .tabs
                     )
                     .padding(.horizontal, 60)
                     .padding(.bottom, 55)

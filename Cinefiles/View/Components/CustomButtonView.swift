@@ -33,6 +33,6 @@ struct CustomButtonView : View {
         crrPage: .constant(.onboarding),
         text: "Botão",
         color: .customPink,
-        destinationView: .home
+        destinationView: .tabs
     )
 }
