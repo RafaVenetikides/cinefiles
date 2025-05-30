@@ -14,7 +14,7 @@ struct AppTabsView: View {
         ZStack(alignment: .bottom){
                         
             TabView(selection: $selectedTab) {
-                Text("Home")
+                HomeView()
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .background(Color(.customDarkBlue))
                     .foregroundStyle(.white)
