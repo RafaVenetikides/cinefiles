@@ -85,6 +85,11 @@ struct RegisterView : View {
             maxHeight: .infinity
         )
         .padding(40)
+        .offset(y: -40)
         .background(.customDarkBlue)
     }
+}
+
+#Preview {
+    RegisterView(crrProfilePage: .constant(.register))
 }
