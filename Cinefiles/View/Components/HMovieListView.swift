@@ -11,6 +11,8 @@ struct HMovieListView: View {
     var movies: [MovieModel]
     var color: Color
     
+    @StateObject var moviesData = MovieData.shared
+    
     var body: some View {
         VStack (alignment: .leading){
             Text(sectionName)
@@ -41,5 +43,5 @@ struct HMovieListView: View {
 }
 
 #Preview{
-    HMovieListView(sectionName: "Favoritos da Edna", movies: [MovieModel(title: "Teste", year: 2000, length: 10, cover: "filme1", directors: ["Teste"], script: ["Teste"], classification: .L)], color: .customGreen)
+    HMovieListView(sectionName: "Favoritos da Edna", movies: MovieData.shared.movies, color: .customGreen)
 }

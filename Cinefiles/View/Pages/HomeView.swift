@@ -17,9 +17,9 @@ struct HomeView: View {
         ScrollView{
             VStack(spacing: 25){
                 ImageCarouselView(images: ["bannerTDM", "bannerSpirit", "bannerBarbie"])
-                HMovieListView(sectionName: "Favoritos da Edna", movies: [], color: .customPink)
-                HMovieListView(sectionName: "Filmes FODÕES", movies: [], color: .customGreen)
-                HMovieListView(sectionName: "Animações", movies: [], color: .customPink)
+                HMovieListView(sectionName: "Favoritos da Edna", movies: moviesData.movies, color: .customPink)
+                HMovieListView(sectionName: "Filmes FODÕES", movies: moviesData.movies, color: .customGreen)
+                HMovieListView(sectionName: "Animações", movies: moviesData.movies, color: .customPink)
             }
         }
     }

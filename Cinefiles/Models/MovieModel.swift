@@ -45,7 +45,7 @@ extension Array where Element == MovieModel{
                 title: "Tudo em Todo o Lugar ao Mesmo Tempo",
                 year: 2022,
                 length: 139,
-                cover: "filme1.jpg",
+                cover: "filme1",
                 directors: ["Daniel Kwan", "Daniel Scheinert"],
                 script: ["Daniel Kwan", "Daniel Scheinert"],
                 classification: .SIXTEEN
@@ -54,7 +54,7 @@ extension Array where Element == MovieModel{
                 title: "Cisne Negro",
                 year: 2010,
                 length: 108,
-                cover: "filme2.jpg",
+                cover: "filme2",
                 directors: ["Darren Aronofsky"],
                 script: ["Mark Heyman", "Andres Heinz", "John J. McLaughlin"],
                 classification: .FOURTEEN
@@ -63,7 +63,7 @@ extension Array where Element == MovieModel{
                 title: "Barbie a princesa e a plebeia",
                 year: 2004,
                 length: 85,
-                cover: "filme3.jpg",
+                cover: "filme3",
                 directors: ["William Lau"],
                 script: ["Cliff Ruby", "Elana Lesser", "Ruth Handler"],
                 classification: .L
@@ -72,7 +72,7 @@ extension Array where Element == MovieModel{
                 title: "Show de Truman",
                 year: 1998,
                 length: 103,
-                cover: "filme4.jpg",
+                cover: "filme4",
                 directors: ["Peter Weir"],
                 script: ["Peter Weir", "Andrew Niccol"],
                 classification: .TWELVE
@@ -81,7 +81,7 @@ extension Array where Element == MovieModel{
                 title: "Spirit: O Corcel Indomável",
                 year: 2002,
                 length: 83,
-                cover: "filme5.jpg",
+                cover: "filme5",
                 directors: ["Kelly Asbury", "Lorna Cook"],
                 script: ["John Fusco"],
                 classification: .L
@@ -90,7 +90,7 @@ extension Array where Element == MovieModel{
                 title: "Labirinto do Fauno",
                 year: 2006,
                 length: 119,
-                cover: "filme6.jpg",
+                cover: "filme6",
                 directors: ["Guillermo del Toro"],
                 script: ["Guillermo del Toro"],
                 classification: .SIXTEEN
@@ -99,7 +99,7 @@ extension Array where Element == MovieModel{
                 title: "O Predestinado",
                 year: 2015,
                 length: 97,
-                cover: "filme7.jpg",
+                cover: "filme7",
                 directors: ["Michael Spierig", "Peter Spierig"],
                 script: ["Michael Spierig", "Peter Spierig", "Robert A Heinlein"],
                 classification: .SIXTEEN
@@ -108,7 +108,7 @@ extension Array where Element == MovieModel{
                 title: "Gigantes de Aço",
                 year: 2011,
                 length: 127,
-                cover: "filme8.jpg",
+                cover: "filme8",
                 directors: ["Shawn Levy"],
                 script: ["Dan Gilroy", "Les Bohem", "Jeremy Leven", "John Gatins", "Richard Matheson"],
                 classification: .TEN
@@ -117,7 +117,7 @@ extension Array where Element == MovieModel{
                 title: "A Vastidão da Noite",
                 year: 2019,
                 length: 89,
-                cover: "filme9.jpg",
+                cover: "filme9",
                 directors: ["Andrew Patterson"],
                 script: ["James Montague", "Craig W. Sanger"],
                 classification: .TWELVE
@@ -126,7 +126,7 @@ extension Array where Element == MovieModel{
                 title: "Parasita",
                 year: 2019,
                 length: 132,
-                cover: "filme10.jpg",
+                cover: "filme10",
                 directors: ["Bong Joon-ho"],
                 script: ["Bong Joon-ho", "Jin Won Han"],
                 classification: .SIXTEEN
@@ -135,7 +135,7 @@ extension Array where Element == MovieModel{
                 title: "Passivonas",
                 year: 2023,
                 length: 91,
-                cover: "filme11.jpg",
+                cover: "filme11",
                 directors: ["Emma Seligman"],
                 script: ["Emma Seligman", "Rachel Sennott"],
                 classification: .FOURTEEN
@@ -144,7 +144,7 @@ extension Array where Element == MovieModel{
                 title: "Turma da Mônica: Uma Aventura no Tempo",
                 year: 2007,
                 length: 80,
-                cover: "filme12.jpg",
+                cover: "filme12",
                 directors: ["Mauricio de Sousa"],
                 script: ["Mauricio de Sousa", "Flávio de Souza", "Didi Oliveira", "Emerson Bernardo de Abreu"],
                 classification: .L
@@ -153,7 +153,7 @@ extension Array where Element == MovieModel{
                 title: "Amnésia (Memento)",
                 year: 2001,
                 length: 113,
-                cover: "filme13.jpg",
+                cover: "filme13",
                 directors: ["Christopher Nolan"],
                 script: ["Christopher Nolan", "Jonathan Nolan"],
                 classification: .EIGHTEEN
@@ -162,7 +162,7 @@ extension Array where Element == MovieModel{
                 title: "Os Excêntricos Tenenbaums",
                 year: 2002,
                 length: 110,
-                cover: "filme14.jpg",
+                cover: "filme14",
                 directors: ["Wes Anderson"],
                 script: ["Wes Anderson", "Owen Wilson"],
                 classification: .TWELVE
@@ -171,7 +171,7 @@ extension Array where Element == MovieModel{
                 title: "La La Land",
                 year: 2017,
                 length: 128,
-                cover: "filme15.jpg",
+                cover: "filme15",
                 directors: ["Damien Chazelle"],
                 script: ["Damien Chazelle"],
                 classification: .TWELVE
@@ -180,7 +180,7 @@ extension Array where Element == MovieModel{
                 title: "Os Serviços de Entrega da Kiki",
                 year: 1990,
                 length: 103,
-                cover: "filme16.jpg",
+                cover: "filme16",
                 directors: ["Hayao Miyazaki"],
                 script: ["Hayao Miyazaki", "Jack Fletcher", "John Semper"],
                 classification: .L
@@ -189,7 +189,7 @@ extension Array where Element == MovieModel{
                 title: "O Feitiço de Áquila",
                 year: 1985,
                 length: 121,
-                cover: "filme17.jpg",
+                cover: "image17",
                 directors: ["Richard Donner"],
                 script: ["Michael Thomas", "Tom Mankiewicz"],
                 classification: .FOURTEEN
@@ -198,7 +198,7 @@ extension Array where Element == MovieModel{
                 title: "Os Incríveis",
                 year: 2004,
                 length: 115,
-                cover: "image.jpg",
+                cover: "image",
                 directors: ["Brad Bird"],
                 script: ["Brad Bird"],
                 classification: .L
