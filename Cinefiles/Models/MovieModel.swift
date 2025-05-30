@@ -27,6 +27,9 @@ struct MovieModel: Identifiable {
     var script: [String]
     
     var classification: classification
+    
+    let is_favorite = false
+    let watched = false
 }
 
 enum classification {

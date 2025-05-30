@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     
-    // Exemplo que como usar o singleton
+    // Exemplo de como usar o singleton
     // Pra pegar os filmes ai é só fazer moviesData.movies
     @StateObject var moviesData = MovieData.shared
     
