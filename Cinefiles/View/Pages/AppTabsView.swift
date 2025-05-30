@@ -45,8 +45,8 @@ struct AppTabsView: View {
             
             Rectangle()
                 .fill(Color(.systemGray))
-                .frame(height: 1) // Espessura da linha
-                .edgesIgnoringSafeArea(.bottom) // Garante que fique na borda inferior
+                .frame(height: 1)
+                .edgesIgnoringSafeArea(.bottom)
                 .offset(y: -60)
         }
     }
