@@ -84,7 +84,6 @@ struct LoginView : View {
 }
 
 #Preview {
-    LoginView(
-        crrPage: .constant(.login)
-    )
+
+    LoginView(crrProfilePage: .constant(.login))
 }

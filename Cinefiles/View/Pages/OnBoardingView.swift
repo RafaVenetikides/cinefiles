@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct OnBoardingView: View {
+    @Binding var showOnboarding: Bool
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -44,7 +46,10 @@ struct OnBoardingView: View {
                     CustomButtonView(
                         text: "Vamos lá",
                         color: Color.customPink
-                    )
+                    ) {
+                        showOnboarding = false
+                    }
+                    
                     .padding(.horizontal, 60)
                     .padding(.bottom, 55)
                 }
@@ -54,5 +59,5 @@ struct OnBoardingView: View {
 }
 
 #Preview {
-    OnBoardingView()
+    OnBoardingView(showOnboarding: .constant(true))
 }
