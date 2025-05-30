@@ -23,7 +23,7 @@ struct CustomInputView: View {
     
     var body: some View {
         if isPassword {
-            VStack {
+            VStack(alignment: .leading) {
                 Text(inputTitle)
                     .font(.system(size: 12, weight: .semibold))
                     .foregroundStyle(inputTitleColor)
