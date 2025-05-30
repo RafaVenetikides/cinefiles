@@ -4,3 +4,9 @@ enum Page {
     case login
     case perfil
 }
+
+enum profilePage {
+    case login
+    case register
+    case profile
+}
