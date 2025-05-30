@@ -9,6 +9,7 @@ import SwiftUI
 struct HMovieListView: View {
     var sectionName: String
     var movies: [MovieModel]
+    var color: Color
     
     var body: some View {
         VStack (alignment: .leading){
@@ -19,7 +20,7 @@ struct HMovieListView: View {
                 .fontWeight(.semibold)
                 .background(
                     RoundedRectangle(cornerRadius: 100)
-                        .foregroundStyle(.customPink)
+                        .foregroundStyle(color)
                 )
             
             ScrollView(.horizontal){
@@ -40,5 +41,5 @@ struct HMovieListView: View {
 }
 
 #Preview{
-    HMovieListView(sectionName: "Favoritos da Edna", movies: [MovieModel(title: "Teste", year: 2000, length: 10, cover: "filme1", directors: ["Teste"], script: ["Teste"], classification: .L)])
+    HMovieListView(sectionName: "Favoritos da Edna", movies: [MovieModel(title: "Teste", year: 2000, length: 10, cover: "filme1", directors: ["Teste"], script: ["Teste"], classification: .L)], color: .customGreen)
 }
