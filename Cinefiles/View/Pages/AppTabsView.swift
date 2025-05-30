@@ -12,43 +12,47 @@ struct AppTabsView: View {
     @State var is_logado = false
     
     var body: some View {
-        ZStack(alignment: .bottom){
+            ZStack(alignment: .bottom) {
+                VStack(spacing: 0){
+                    TabView(selection: $selectedTab) {
+                        HomeView()
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .background(Color(.customDarkBlue))
+                            .foregroundStyle(.white)
+                            .tabItem {
+                                Image(selectedTab == 0 ? "homeIconSelectedSmall" : "homeIconSmall")
+                            }
+                            .tag(0)
                         
-            TabView(selection: $selectedTab) {
-                HomeView()
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(Color(.customDarkBlue))
-                    .foregroundStyle(.white)
-                    .tabItem {
-                        Image(selectedTab == 0 ? "homeIconSelectedSmall" : "homeIconSmall")
+                        Text("Search")
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .background(Color(.customDarkBlue))
+                            .foregroundStyle(.white)
+                            .tabItem {
+                                Image(selectedTab == 1 ? "searchIconSelectedSmall" : "searchIconSmall")
+                            }
+                            .tag(1)
+                        
+                        ProfileView()
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .background(Color(.customDarkBlue))
+                            .foregroundStyle(.white)
+                            .tabItem {
+                                Image(selectedTab == 2 ? "profileIconSelectedSmall" : "profileIconSmall")
+                            }
+                            .tag(2)
                     }
-                    .tag(0)
-                
-                Text("Search")
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(Color(.customDarkBlue))
-                    .foregroundStyle(.white)
-                    .tabItem {
-                        Image(selectedTab == 1 ? "searchIconSelectedSmall" : "searchIconSmall")
-                    }
-                    .tag(1)
-                
-                ProfileView()
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(Color(.customDarkBlue))
-                    .foregroundStyle(.white)
-                    .tabItem {
-                        Image(selectedTab == 2 ? "profileIconSelectedSmall" : "profileIconSmall")
-                    }
-                    .tag(2)
+                }
+
+                VStack(spacing: 0) {
+                    Spacer()
+                    Rectangle()
+                        .fill(Color.gray)
+                        .frame(height: 1)
+                        .padding(.bottom, 93)
+                }
+                .ignoresSafeArea()
             }
-            
-            Rectangle()
-                .fill(Color(.systemGray))
-                .frame(height: 1)
-                .edgesIgnoringSafeArea(.bottom)
-                .offset(y: -60)
-        }
     }
 }
 
