@@ -1,9 +1,3 @@
-//
-//  .gitignore
-//  Cinefiles
-//
-//  Created by Rafael Venetikides on 29/05/25.
-//
-
-Cinefiles.xcodeproj/project.pbxproj
 .DS_Store
+
+
