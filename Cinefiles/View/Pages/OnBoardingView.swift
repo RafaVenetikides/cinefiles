@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OnBoardingView: View {
-    @Binding var crrPage: Page
+    @Binding var showOnboarding: Bool
     
     var body: some View {
         NavigationStack {
@@ -44,11 +44,12 @@ struct OnBoardingView: View {
                     Spacer()
                     
                     CustomButtonView(
-                        crrPage: $crrPage,
                         text: "Vamos lá",
-                        color: Color.customPink,
-                        destinationView: .tabs
-                    )
+                        color: Color.customPink
+                    ) {
+                        showOnboarding = false
+                    }
+                    
                     .padding(.horizontal, 60)
                     .padding(.bottom, 55)
                 }
@@ -58,5 +59,5 @@ struct OnBoardingView: View {
 }
 
 #Preview {
-    OnBoardingView(crrPage: .constant(.onboarding))
+    OnBoardingView(showOnboarding: .constant(true))
 }

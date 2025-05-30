@@ -1,10 +1,10 @@
 import SwiftUI
 
-struct LoginView : View {
+struct RegisterView : View {
     @Binding var crrProfilePage : profilePage
     @State private var showAlert = false
     
-    var pageColor : Color = .customPink
+    var pageColor : Color = .customGreen
     
     var body : some View {
         VStack(spacing: 36) {
@@ -23,6 +23,12 @@ struct LoginView : View {
                     inputTitle: "Senha",
                     inputTitleColor: pageColor,
                     placeholder: "Não posso passar a minha",
+                    isPassword: true
+                )
+                CustomInputView(
+                    inputTitle: "Confirmar Senha",
+                    inputTitleColor: pageColor,
+                    placeholder: "A mesma de antes",
                     isPassword: true
                 )
                 Button {
@@ -47,7 +53,7 @@ struct LoginView : View {
                     text: "Entrar",
                     color: pageColor,
                     function: {
-                        crrProfilePage = .profile
+                        crrProfilePage = .register
                     }
                 )
                 
@@ -60,14 +66,14 @@ struct LoginView : View {
                     color: .white,
                     icon: "apple.logo",
                     function: {
-                        crrProfilePage = .profile
+                        crrProfilePage = .register
                     }
                 )
                 
                 Button {
-                    crrProfilePage = .register
+                    crrProfilePage = .login
                 } label: {
-                    Text("Não tenho cadastro")
+                    Text("Já tenho uma conta")
                         .font(.system(size: 16, weight: .semibold))
                         .underline()
                         .foregroundColor(pageColor)
@@ -81,8 +87,4 @@ struct LoginView : View {
         .padding(40)
         .background(.customDarkBlue)
     }
-}
-
-#Preview {
-    LoginView(crrProfilePage: .constant(.login))
 }

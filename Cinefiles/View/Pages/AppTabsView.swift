@@ -33,7 +33,7 @@ struct AppTabsView: View {
                     }
                     .tag(1)
                 
-                LoginView(crrPage: .constant(.tabs))
+                ProfileView()
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .background(Color(.customDarkBlue))
                     .foregroundStyle(.white)
