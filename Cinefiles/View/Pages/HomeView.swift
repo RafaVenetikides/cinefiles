@@ -7,14 +7,18 @@ struct HomeView: View {
     @StateObject var moviesData = MovieData.shared
     
     var body: some View {
-        ScrollView{
-            VStack(spacing: 25){
-                ImageCarouselView(images: ["bannerTDM", "bannerSpirit", "bannerBarbie"])
-                HMovieListView(sectionName: "Favoritos da Edna", movies: moviesData.movies, color: .customPink)
-                HMovieListView(sectionName: "Filmes FODÕES", movies: moviesData.movies, color: .customGreen)
-                HMovieListView(sectionName: "Animações", movies: moviesData.movies, color: .customPink)
+        NavigationStack{
+            ScrollView{
+                VStack(spacing: 25){
+                    ImageCarouselView(images: ["bannerTDM", "bannerSpirit", "bannerBarbie"])
+                    HMovieListView(sectionName: "Favoritos da Edna", movies: moviesData.movies, color: .customPink)
+                    HMovieListView(sectionName: "Filmes FODÕES", movies: moviesData.movies, color: .customGreen)
+                    HMovieListView(sectionName: "Animações", movies: moviesData.movies, color: .customPink)
+                }
             }
+            .background(Color(.customDarkBlue))
         }
+        .tint(.customGreen)
     }
 }
 

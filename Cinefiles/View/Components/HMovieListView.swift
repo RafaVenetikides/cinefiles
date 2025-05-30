@@ -28,9 +28,14 @@ struct HMovieListView: View {
             ScrollView(.horizontal){
                 HStack{
                     ForEach(movies){ movie in
-                        Image(movie.cover)
-                            .resizable()
-                            .scaledToFit()
+                        NavigationLink{
+                            MovieView(movie: movie)
+                        }
+                        label: {
+                            Image(movie.cover)
+                                .resizable()
+                                .scaledToFit()
+                        }
                     }
                 }
                 
