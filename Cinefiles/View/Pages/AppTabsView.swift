@@ -1,10 +1,3 @@
-//
-//  AppTabsView.swift
-//  Cinefiles
-//
-//  Created by Rafael Venetikides on 30/05/25.
-//
-
 import SwiftUI
 
 struct AppTabsView: View {
@@ -16,11 +9,7 @@ struct AppTabsView: View {
                 VStack(spacing: 0){
                     TabView(selection: $selectedTab) {
                         HomeView()
-                            .background(Color.clear)
-                            .frame(maxWidth: .infinity, maxHeight: .infinity)
-                            .background(Color(.customDarkBlue))
-                            .foregroundStyle(.white)
-                            .tabItem {
+                             .tabItem {
                                 Image(selectedTab == 0 ? "homeIconSelectedSmall" : "homeIconSmall")
                             }
                             .tag(0)

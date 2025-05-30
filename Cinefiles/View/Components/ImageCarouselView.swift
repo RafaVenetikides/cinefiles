@@ -1,10 +1,3 @@
-//
-//  ImageCarouselView.swift
-//  Cinefiles
-//
-//  Created by Rafael Venetikides on 30/05/25.
-//
-
 import SwiftUI
 import Combine
 
