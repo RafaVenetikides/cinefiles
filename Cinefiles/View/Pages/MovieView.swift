@@ -71,10 +71,10 @@ struct MovieView : View {
 #Preview {
     MovieView(
         movie: MovieModel(
-            poster: "filme8",
             title: "Gigantes de Aço",
             year: "2011",
             length: 127,
+            cover: "filme8",
             directors: ["Shawn Levy"],
             script: ["Dan Gilroy", "Les Bohem"],
             synopsis: "Em um futuro próximo, as máquinas substituem os homens no ringue. As lutas de boxe acontecem entre robôs de alta tecnologia. Charlie, um ex-lutador frustrado, decide se juntar ao filho para construir um competidor imbatível.",

@@ -41,5 +41,5 @@ struct HMovieListView: View {
 }
 
 #Preview{
-    HMovieListView(sectionName: "Favoritos da Edna", movies: [MovieModel(title: "Teste", year: 2000, length: 10, cover: "filme1", directors: ["Teste"], script: ["Teste"], classification: .L)], color: .customGreen)
+    HMovieListView(sectionName: "Favoritos da Edna", movies: [MovieModel(title: "Teste", year: "2000", length: 10, cover: "filme1", directors: ["Teste"], script: ["Teste"], synopsis: "ablalbalbla", classification: .L, trailerId: "fsddfs")], color: .customGreen)
 }
