@@ -12,7 +12,7 @@ struct MovieView : View {
                 )
             
             HStack() {
-                Image(movie.poster)
+                Image(movie.cover)
                     .resizable()
                     .frame(width: 100, height: 150)
                 VStack(alignment: .leading, spacing: 14) {
