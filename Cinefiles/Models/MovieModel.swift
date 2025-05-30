@@ -13,8 +13,11 @@ struct MovieModel: Identifiable {
     var title: String
     var year: Int
     var length: Int
+    
+    var cover: String
     var directors: [String]
     var script: [String]
+    
     var classification: classification
 }
 
