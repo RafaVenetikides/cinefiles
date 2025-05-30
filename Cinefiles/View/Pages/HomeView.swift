@@ -9,9 +9,11 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        VStack{
-            ImageCarouselView(images: ["bannerTDM", "bannerSpirit", "bannerBarbie"])
-            
+        ScrollView{
+            VStack(spacing: 25){
+                ImageCarouselView(images: ["bannerTDM", "bannerSpirit", "bannerBarbie"])
+                HMovieListView(sectionName: "Favoritos da Edna", movies: [])
+            }
         }
     }
 }
@@ -19,3 +21,5 @@ struct HomeView: View {
 #Preview {
     HomeView()
 }
+
+
