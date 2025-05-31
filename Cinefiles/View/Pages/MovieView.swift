@@ -64,6 +64,31 @@ struct MovieView : View {
                 }
                 .padding(.leading)
                 
+                VStack(alignment: .leading) {
+                    Text("Notas")
+                        .foregroundStyle(.customDarkBlue)
+                        .font(.system(size: 16, weight: .semibold))
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 4)
+                        .background(.customGreen)
+                        .cornerRadius(24)
+                    HStack {
+                        Spacer()
+                        ForEach(Array(movie.rankings.enumerated()), id: \.element.id) { index, ranking in
+                            RankingView(ranking: ranking)
+                            Spacer()
+                            if index != movie.rankings.count - 1 {
+                                Rectangle()
+                                    .fill(Color(.systemGray))
+                                    .frame(width: 0.5, height: 80)
+                                Spacer()
+                            }
+                        }
+                        Spacer()
+                    }
+                }
+                .padding(.horizontal, 16)
+                
                 Spacer()
                 
             }
@@ -95,7 +120,7 @@ struct MovieView : View {
                         .cornerRadius(100)
                 }
             }
-            .offset(y: -40)
+            .offset(y: -30)
             .frame(maxWidth: .infinity)
             .padding(.horizontal, 16)
             .background(.customDarkBlue)
@@ -116,7 +141,12 @@ struct MovieView : View {
                 script: ["Dan Gilroy", "Les Bohem"],
                 synopsis: "Em um futuro próximo, as máquinas substituem os homens no ringue. As lutas de boxe acontecem entre robôs de alta tecnologia. Charlie, um ex-lutador frustrado, decide se juntar ao filho para construir um competidor imbatível.",
                 classification: .TEN,
-                trailerId: "B33mhvSDO3c"
+                trailerId: "B33mhvSDO3c",
+                rankings: [
+                    RankingModel(websiteImage: "imdb", ranking: 3),
+                    RankingModel(websiteImage: "metacritic", ranking: 4.5),
+                    RankingModel(websiteImage: "rotten", ranking: 4)
+                ]
             )
         )
     )
