@@ -4,67 +4,70 @@ struct MovieView : View {
     var movie : MovieModel
     
     var body : some View {
-        VStack(alignment: .leading, spacing: 24) {
-            YouTubeView(videoId: movie.trailerId)
-                .frame(
-                    maxWidth: .infinity,
-                    maxHeight: 230
-                )
-            
-            HStack() {
-                Image(movie.cover)
-                    .resizable()
-                    .frame(width: 100, height: 150)
-                VStack(alignment: .leading, spacing: 14) {
-                    Text(movie.title)
-                        .font(.system(size: 20, weight: .semibold))
-                        .padding(.horizontal, 12)
-                        .padding(.vertical, 6)
-                        .background(.customPink)
+        NavigationStack {
+            VStack(alignment: .leading, spacing: 24) {
+                YouTubeView(videoId: movie.trailerId)
+                    .frame(
+                        maxWidth: .infinity,
+                        maxHeight: 230
+                    )
+                
+                HStack() {
+                    Image(movie.cover)
+                        .resizable()
+                        .frame(width: 100, height: 150)
+                    VStack(alignment: .leading, spacing: 14) {
+                        Text(movie.title)
+                            .font(.system(size: 20, weight: .semibold))
+                            .padding(.horizontal, 12)
+                            .padding(.vertical, 6)
+                            .background(.customPink)
+                            .cornerRadius(24)
+                        
+                        VStack(alignment: .leading, spacing: 8) {
+                            HStack {
+                                let formatted = "\(movie.length / 60)h \(movie.length % 60)min"
+                                Text("\(movie.year) · \(formatted) ·")
+                                    .font(.system(size: 12))
+                                    .foregroundColor(.gray)
+                                Image(movie.classification.rawValue)
+                                    .resizable()
+                                    .frame(width: 16, height: 16)
+                            }
+                            VStack(alignment: .leading) {
+                                Text("Direção: \(movie.directors.joined(separator: ", "))")
+                                    .font(.system(size: 12))
+                                    .foregroundColor(.gray)
+                                Text("Escrita: \(movie.script.joined(separator: ", "))")
+                                    .font(.system(size: 12))
+                                    .foregroundColor(.gray)
+                            }
+                        }
+                        .padding(.leading, 8)
+                    }
+                }
+                .padding(.leading)
+                
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Sinopse")
+                        .foregroundStyle(.customDarkBlue)
+                        .font(.system(size: 16, weight: .semibold))
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 4)
+                        .background(.customGreen)
                         .cornerRadius(24)
                     
-                    VStack(alignment: .leading, spacing: 8) {
-                        HStack {
-                            let formatted = "\(movie.length / 60)h \(movie.length % 60)min"
-                            Text("\(movie.year) · \(formatted) ·")
-                                .font(.system(size: 12))
-                                .foregroundColor(.gray)
-                            Image(movie.classification.rawValue)
-                                .resizable()
-                                .frame(width: 16, height: 16)
-                        }
-                        VStack(alignment: .leading) {
-                            Text("Direção: \(movie.directors.joined(separator: ", "))")
-                                .font(.system(size: 12))
-                                .foregroundColor(.gray)
-                            Text("Escrita: \(movie.script.joined(separator: ", "))")
-                                .font(.system(size: 12))
-                                .foregroundColor(.gray)
-                        }
-                    }
-                    .padding(.leading, 8)
+                    Text(movie.synopsis)
+                        .font(.system(size: 14))
+                        .foregroundStyle(.white)
+                        .padding(.horizontal, 8)
                 }
-            }
-            .padding(.leading)
-            
-            VStack(alignment: .leading, spacing: 8) {
-                Text("Sinopse")
-                    .font(.system(size: 16, weight: .semibold))
-                    .padding(.horizontal, 8)
-                    .padding(.vertical, 4)
-                    .background(.customGreen)
-                    .cornerRadius(24)
+                .padding(.leading)
                 
-                Text(movie.synopsis)
-                    .font(.system(size: 14))
-                    .foregroundStyle(.white)
-                    .padding(.horizontal, 8)
+                Spacer()
             }
-            .padding(.leading)
-            
-            Spacer()
+            .background(.customDarkBlue)
         }
-        .background(.customDarkBlue)
     }
 }
 

@@ -9,16 +9,12 @@ struct AppTabsView: View {
                 VStack(spacing: 0){
                     TabView(selection: $selectedTab) {
                         HomeView()
-                            .background(Color.clear)
-                            .frame(maxWidth: .infinity, maxHeight: .infinity)
-                            .background(Color(.customDarkBlue))
-                            .foregroundStyle(.white)
-                            .tabItem {
+                             .tabItem {
                                 Image(selectedTab == 0 ? "homeIconSelectedSmall" : "homeIconSmall")
                             }
                             .tag(0)
                         
-                        Text("Search")
+                        SearchView()
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
                             .background(Color(.customDarkBlue))
                             .foregroundStyle(.white)

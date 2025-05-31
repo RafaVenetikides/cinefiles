@@ -28,9 +28,12 @@ struct HMovieListView: View {
             ScrollView(.horizontal){
                 HStack{
                     ForEach(movies){ movie in
-                        Image(movie.cover)
-                            .resizable()
-                            .scaledToFit()
+                        NavigationLink{
+                            MovieView(movie: movie)
+                        }
+                        label: {
+                            MovieCellView(movie: movie)
+                        }
                     }
                 }
                 
@@ -45,3 +48,4 @@ struct HMovieListView: View {
 #Preview{
     HMovieListView(sectionName: "Favoritos da Edna", movies: MovieData.shared.movies, color: .customGreen)
 }
+

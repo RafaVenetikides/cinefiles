@@ -19,6 +19,11 @@ struct MovieModel: Identifiable {
     var script: [String]
     var synopsis: String
     var classification: classification
+
+    
+    let is_favorite = false
+    let watched = false
+
     var trailerId: String
 }
 
