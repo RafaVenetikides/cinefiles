@@ -23,7 +23,6 @@ struct MovieModel: Identifiable {
     
     var is_favorite = false
     var watched = false
-
 }
 
 enum classification : String {

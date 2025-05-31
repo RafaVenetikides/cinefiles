@@ -8,7 +8,6 @@ import SwiftUI
 
 struct HMovieListView: View {
     var sectionName: String
-    var movies: [MovieModel]
     var color: Color
     
     @StateObject var moviesData = MovieData.shared
@@ -27,12 +26,12 @@ struct HMovieListView: View {
             
             ScrollView(.horizontal){
                 HStack{
-                    ForEach(movies){ movie in
+                    ForEach($moviesData.movies){ $movie in
                         NavigationLink{
-                            MovieView(movie: movie)
+                            MovieView(movie: $movie)
                         }
                         label: {
-                            MovieCellView(movie: movie)
+                            MovieCellView(movie: $movie)
                         }
                     }
                 }
@@ -46,6 +45,6 @@ struct HMovieListView: View {
 }
 
 #Preview{
-    HMovieListView(sectionName: "Favoritos da Edna", movies: MovieData.shared.movies, color: .customGreen)
+    HMovieListView(sectionName: "Favoritos da Edna", color: .customGreen)
 }
 

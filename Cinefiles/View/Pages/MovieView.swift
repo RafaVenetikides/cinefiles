@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct MovieView : View {
-    var movie : MovieModel
+    @Binding var movie : MovieModel
     
     var body : some View {
         NavigationStack {
@@ -73,7 +73,7 @@ struct MovieView : View {
             HStack(spacing: 16) {
                 Spacer()
                 Button {
-                    
+                    movie.watched.toggle()
                 } label: {
                     Image(systemName: movie.watched ? "eye.fill" : "eye.slash.fill")
                         .font(.system(size: 28, weight: .semibold))
@@ -84,7 +84,7 @@ struct MovieView : View {
                         .cornerRadius(100)
                 }
                 Button {
-                    
+                    movie.is_favorite.toggle()
                 } label: {
                     Image(systemName: movie.is_favorite ? "star.fill" : "star")
                         .font(.system(size: 28, weight: .semibold))
@@ -105,7 +105,8 @@ struct MovieView : View {
 
 #Preview {
     MovieView(
-        movie:/* .constant(*/
+        movie:
+        .constant(
             MovieModel(
                 title: "Gigantes de Aço",
                 year: "2011",
@@ -118,6 +119,6 @@ struct MovieView : View {
                 trailerId: "B33mhvSDO3c"
             )
         )
-//    )
+    )
 }
 
