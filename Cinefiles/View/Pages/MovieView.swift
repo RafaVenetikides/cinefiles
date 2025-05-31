@@ -12,7 +12,7 @@ struct MovieView : View {
                         maxHeight: 230
                     )
                 
-                HStack() {
+                HStack(spacing: 12) {
                     Image(movie.cover)
                         .resizable()
                         .frame(width: 100, height: 150)
@@ -65,7 +65,39 @@ struct MovieView : View {
                 .padding(.leading)
                 
                 Spacer()
+                
             }
+            .offset(y: 10)
+            .background(.customDarkBlue)
+            
+            HStack(spacing: 16) {
+                Spacer()
+                Button {
+                    
+                } label: {
+                    Image(systemName: movie.watched ? "eye.fill" : "eye.slash.fill")
+                        .font(.system(size: 28, weight: .semibold))
+                        .frame(width: 50, height: 50)
+                        .padding(8)
+                        .foregroundStyle(.white)
+                        .background(.customBlue)
+                        .cornerRadius(100)
+                }
+                Button {
+                    
+                } label: {
+                    Image(systemName: movie.is_favorite ? "star.fill" : "star")
+                        .font(.system(size: 28, weight: .semibold))
+                        .frame(width: 50, height: 50)
+                        .padding(8)
+                        .foregroundStyle(.white)
+                        .background(.customBlue)
+                        .cornerRadius(100)
+                }
+            }
+            .offset(y: -40)
+            .frame(maxWidth: .infinity)
+            .padding(.horizontal, 16)
             .background(.customDarkBlue)
         }
     }
@@ -73,16 +105,19 @@ struct MovieView : View {
 
 #Preview {
     MovieView(
-        movie: MovieModel(
-            title: "Gigantes de Aço",
-            year: "2011",
-            length: 127,
-            cover: "filme8",
-            directors: ["Shawn Levy"],
-            script: ["Dan Gilroy", "Les Bohem"],
-            synopsis: "Em um futuro próximo, as máquinas substituem os homens no ringue. As lutas de boxe acontecem entre robôs de alta tecnologia. Charlie, um ex-lutador frustrado, decide se juntar ao filho para construir um competidor imbatível.",
-            classification: .TEN,
-            trailerId: "B33mhvSDO3c")
-    )
+        movie:/* .constant(*/
+            MovieModel(
+                title: "Gigantes de Aço",
+                year: "2011",
+                length: 127,
+                cover: "filme8",
+                directors: ["Shawn Levy"],
+                script: ["Dan Gilroy", "Les Bohem"],
+                synopsis: "Em um futuro próximo, as máquinas substituem os homens no ringue. As lutas de boxe acontecem entre robôs de alta tecnologia. Charlie, um ex-lutador frustrado, decide se juntar ao filho para construir um competidor imbatível.",
+                classification: .TEN,
+                trailerId: "B33mhvSDO3c"
+            )
+        )
+//    )
 }
 
