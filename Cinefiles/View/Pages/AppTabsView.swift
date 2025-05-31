@@ -14,7 +14,7 @@ struct AppTabsView: View {
                             }
                             .tag(0)
                         
-                        Text("Search")
+                        SearchView()
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
                             .background(Color(.customDarkBlue))
                             .foregroundStyle(.white)
