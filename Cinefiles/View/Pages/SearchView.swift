@@ -1,16 +1,10 @@
-//
-//  SearchView.swift
-//  Cinefiles
-//
-//  Created by Rafael Venetikides on 30/05/25.
-//
-
 import SwiftUI
 
 struct SearchView: View {
     @State var searchText = ""
     @StateObject var moviesData = MovieData.shared
     
+    // Acho que pode remover isso aqui, precisei referenciar o foreach diferente pra funcionar
     var filteredMovies: [MovieModel] {
             if searchText.isEmpty {
                 return moviesData.movies
@@ -42,12 +36,14 @@ struct SearchView: View {
                 ScrollView{
                     
                     LazyVGrid(columns: [GridItem(.flexible(), spacing: 24), GridItem(.flexible())], spacing: 24) {
-                        ForEach(filteredMovies){ movie in
-                            NavigationLink {
-                                MovieView(movie: movie)
-                            } label: {
-                                MovieCellView(movie: movie)
-                                    .cornerRadius(15)
+                        ForEach($moviesData.movies){ $movie in
+                            if searchText.isEmpty || movie.title.localizedCaseInsensitiveContains(searchText) {
+                                NavigationLink {
+                                    MovieView(movie: $movie)
+                                } label: {
+                                    MovieCellView(movie: $movie)
+                                        .cornerRadius(15)
+                                }
                             }
                         }
                     }

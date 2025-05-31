@@ -7,7 +7,8 @@
 import SwiftUI
 
 struct MovieCellView: View {
-    var movie: MovieModel
+    @Binding var movie: MovieModel
+    
     var body: some View {
         Image(movie.cover)
             .resizable()

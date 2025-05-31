@@ -19,12 +19,11 @@ struct MovieModel: Identifiable {
     var script: [String]
     var synopsis: String
     var classification: classification
-
-    
-    let is_favorite = false
-    let watched = false
-
     var trailerId: String
+    var rankings: [RankingModel]
+    
+    var is_favorite = false
+    var watched = false
 }
 
 enum classification : String {
@@ -48,7 +47,12 @@ extension Array where Element == MovieModel{
                 script: ["Daniel Kwan", "Daniel Scheinert"],
                 synopsis: "Uma imigrante chinesa de meia idade se envolve em uma aventura louca, onde só ela pode salvar o mundo explorando outros universos que se conectam com as vidas que ela poderia ter levado",
                 classification: .SIXTEEN,
-                trailerId: "wxN1T1uxQ2g"
+                trailerId: "wxN1T1uxQ2g",
+                rankings: [
+                    RankingModel(websiteImage: "imdb", ranking: 3),
+                    RankingModel(websiteImage: "metacritic", ranking: 4.5),
+                    RankingModel(websiteImage: "rotten", ranking: 4)
+                ]
             ),
             MovieModel(
                 title: "Cisne Negro",
@@ -59,7 +63,12 @@ extension Array where Element == MovieModel{
                 script: ["Mark Heyman", "Andres Heinz", "John J. McLaughlin"],
                 synopsis: "Uma esforçada bailarina luta para manter sua sanidade após obter o papel principal no Lago dos Cisnes de Tchaikovsky.",
                 classification: .FOURTEEN,
-                trailerId: "5jaI1XOB-bs"
+                trailerId: "5jaI1XOB-bs",
+                rankings: [
+                    RankingModel(websiteImage: "imdb", ranking: 3),
+                    RankingModel(websiteImage: "metacritic", ranking: 4.5),
+                    RankingModel(websiteImage: "rotten", ranking: 4)
+                ]
             ),
             MovieModel(
                 title: "Barbie a princesa e a plebeia",
@@ -70,7 +79,12 @@ extension Array where Element == MovieModel{
                 script: ["Cliff Ruby", "Elana Lesser", "Ruth Handler"],
                 synopsis: "Uma plebeia, moradora de um vilarejo, é muito parecida com a princesa do reino. Os destinos das duas se cruzam quando a princesa é sequestrada, e a moça humilde usa sua incrível semelhança com ela para tentar salvar das mãos do vilão.",
                 classification: .L,
-                trailerId: "V5P6rMgkn3g"
+                trailerId: "V5P6rMgkn3g",
+                rankings: [
+                    RankingModel(websiteImage: "imdb", ranking: 3),
+                    RankingModel(websiteImage: "metacritic", ranking: 4.5),
+                    RankingModel(websiteImage: "rotten", ranking: 4)
+                ]
             ),
             MovieModel(
                 title: "Show de Truman",
@@ -81,7 +95,12 @@ extension Array where Element == MovieModel{
                 script: ["Peter Weir", "Andrew Niccol"],
                 synopsis: "Truman Burbank é um pacato vendedor de seguros que leva uma vida simples com sua esposa Meryl Burbank. Porém, algumas coisas ao seu redor fazem com que ele passe a estranhar sua cidade, seus supostos amigos e até sua mulher. Após conhecer a misteriosa Lauren, ele fica intrigado e acaba descobrindo que toda sua vida foi monitorada por câmeras e transmitida em rede nacional.",
                 classification: .TWELVE,
-                trailerId: "s5Jc-7MYGhY"
+                trailerId: "s5Jc-7MYGhY",
+                rankings: [
+                    RankingModel(websiteImage: "imdb", ranking: 3),
+                    RankingModel(websiteImage: "metacritic", ranking: 4.5),
+                    RankingModel(websiteImage: "rotten", ranking: 4)
+                ]
             ),
             MovieModel(
                 title: "Spirit: O Corcel Indomável",
@@ -92,7 +111,12 @@ extension Array where Element == MovieModel{
                 script: ["John Fusco"],
                 synopsis: "Animação sobre a amizade entre um menino indígena e um cavalo indomável apaixonado por uma égua. Ambientada no Velho Oeste americano, mostra o impacto do processo civilizatório na vida dos três e também na amizade que construíram.",
                 classification: .L,
-                trailerId: "vjtlYCNLu_U"
+                trailerId: "vjtlYCNLu_U",
+                rankings: [
+                    RankingModel(websiteImage: "imdb", ranking: 3),
+                    RankingModel(websiteImage: "metacritic", ranking: 4.5),
+                    RankingModel(websiteImage: "rotten", ranking: 4)
+                ]
             ),
             MovieModel(
                 title: "Labirinto do Fauno",
@@ -103,7 +127,12 @@ extension Array where Element == MovieModel{
                 script: ["Guillermo del Toro"],
                 synopsis: "Em 1944, na Espanha, a jovem Ofélia e sua mãe doente chegam ao posto do novo marido de sua mãe, um sádico oficial do exército que está tentando reprimir uma guerrilheira. Enquanto explorava um labirinto antigo, Ofélia encontra o Pan fauno, que diz que a menina é uma lendária princesa perdida e que ela precisa completar três tarefas perigosas a fim de se tornar imortal.",
                 classification: .SIXTEEN,
-                trailerId: "M09mCcVgrsA"
+                trailerId: "M09mCcVgrsA",
+                rankings: [
+                    RankingModel(websiteImage: "imdb", ranking: 3),
+                    RankingModel(websiteImage: "metacritic", ranking: 4.5),
+                    RankingModel(websiteImage: "rotten", ranking: 4)
+                ]
             ),
             MovieModel(
                 title: "O Predestinado",
@@ -114,7 +143,12 @@ extension Array where Element == MovieModel{
                 script: ["Michael Spierig", "Peter Spierig", "Robert A Heinlein"],
                 synopsis: "Um agente precisa viajar no tempo para impedir a ação de um criminoso responsável por um ataque que mata milhares de pessoas.",
                 classification: .SIXTEEN,
-                trailerId: "ikOlvl3Xhx0"
+                trailerId: "ikOlvl3Xhx0",
+                rankings: [
+                    RankingModel(websiteImage: "imdb", ranking: 3),
+                    RankingModel(websiteImage: "metacritic", ranking: 4.5),
+                    RankingModel(websiteImage: "rotten", ranking: 4)
+                ]
             ),
             MovieModel(
                 title: "Gigantes de Aço",
@@ -125,7 +159,12 @@ extension Array where Element == MovieModel{
                 script: ["Dan Gilroy", "Les Bohem", "Jeremy Leven", "John Gatins", "Richard Matheson"],
                 synopsis: "Em um futuro próximo, as máquinas substituem os homens no ringue. As lutas de boxe acontecem entre robôs de alta tecnologia. Charlie, um ex-lutador frustrado, decide se juntar ao filho para construir um competidor imbatível.",
                 classification: .TEN,
-                trailerId: "choj0wMlvv8"
+                trailerId: "choj0wMlvv8",
+                rankings: [
+                    RankingModel(websiteImage: "imdb", ranking: 3),
+                    RankingModel(websiteImage: "metacritic", ranking: 4.5),
+                    RankingModel(websiteImage: "rotten", ranking: 4)
+                ]
             ),
             MovieModel(
                 title: "A Vastidão da Noite",
@@ -136,7 +175,12 @@ extension Array where Element == MovieModel{
                 script: ["James Montague", "Craig W. Sanger"],
                 synopsis: "Duas crianças procuram a fonte de uma misteriosa frequência que surgiu em sua cidade.",
                 classification: .TWELVE,
-                trailerId: "ZEiwpCJqMM0"
+                trailerId: "ZEiwpCJqMM0",
+                rankings: [
+                    RankingModel(websiteImage: "imdb", ranking: 3),
+                    RankingModel(websiteImage: "metacritic", ranking: 4.5),
+                    RankingModel(websiteImage: "rotten", ranking: 4)
+                ]
             ),
             MovieModel(
                 title: "Parasita",
@@ -147,7 +191,12 @@ extension Array where Element == MovieModel{
                 script: ["Bong Joon-ho", "Jin Won Han"],
                 synopsis: "Toda a família de Ki-taek está desempregada, vivendo em um porão sujo e apertado. Por obra do acaso, ele começa a dar aulas de inglês para uma garota de família rica. Fascinados com a vida luxuosa destas pessoas, pai, mãe e filhos bolam um plano para se infiltrar também na abastada família, um a um. No entanto, os segredos e mentiras necessários à ascensão social cobram o seu preço.",
                 classification: .SIXTEEN,
-                trailerId: "Q38h5XD4RKE"
+                trailerId: "Q38h5XD4RKE",
+                rankings: [
+                    RankingModel(websiteImage: "imdb", ranking: 3),
+                    RankingModel(websiteImage: "metacritic", ranking: 4.5),
+                    RankingModel(websiteImage: "rotten", ranking: 4)
+                ]
             ),
             MovieModel(
                 title: "Passivonas",
@@ -158,7 +207,12 @@ extension Array where Element == MovieModel{
                 script: ["Emma Seligman", "Rachel Sennott"],
                 synopsis: "Duas alunas não populares do último ano do ensino médio criam um clube da luta para tentar impressionar e conquistar líderes de torcida.",
                 classification: .FOURTEEN,
-                trailerId: "vH5NAahf76s"
+                trailerId: "vH5NAahf76s",
+                rankings: [
+                    RankingModel(websiteImage: "imdb", ranking: 3),
+                    RankingModel(websiteImage: "metacritic", ranking: 4.5),
+                    RankingModel(websiteImage: "rotten", ranking: 4)
+                ]
             ),
             MovieModel(
                 title: "Turma da Mônica: Uma Aventura no Tempo",
@@ -169,7 +223,12 @@ extension Array where Element == MovieModel{
                 script: ["Mauricio de Sousa", "Flávio de Souza", "Didi Oliveira", "Emerson Bernardo de Abreu"],
                 synopsis: "Franjinha está construindo uma máquina do tempo e precisa reunir moléculas dos quatro elementos: ar, água, fogo e terra. Mônica joga Sansão e, sem querer, acerta o aparelho, espalhando os elementos. Agora a turma precisa consertá-la.",
                 classification: .L,
-                trailerId: "AfPqH9ltHgw"
+                trailerId: "AfPqH9ltHgw",
+                rankings: [
+                    RankingModel(websiteImage: "imdb", ranking: 3),
+                    RankingModel(websiteImage: "metacritic", ranking: 4.5),
+                    RankingModel(websiteImage: "rotten", ranking: 4)
+                ]
             ),
             MovieModel(
                 title: "Amnésia (Memento)",
@@ -180,7 +239,12 @@ extension Array where Element == MovieModel{
                 script: ["Christopher Nolan", "Jonathan Nolan"],
                 synopsis: "Leonard está caçando o homem que estuprou e matou sua esposa. Ele tem dificuldades em encontrar o assassino pois sofre de uma forma intratável de perda de memória. Mesmo que ele possa lembrar detalhes da vida antes do acidente, Leonard não consegue lembrar o que aconteceu quinze minutos atrás, onde está indo ou a razão.",
                 classification: .EIGHTEEN,
-                trailerId: "t1EuIMA_28w"
+                trailerId: "t1EuIMA_28w",
+                rankings: [
+                    RankingModel(websiteImage: "imdb", ranking: 3),
+                    RankingModel(websiteImage: "metacritic", ranking: 4.5),
+                    RankingModel(websiteImage: "rotten", ranking: 4)
+                ]
             ),
             MovieModel(
                 title: "Os Excêntricos Tenenbaums",
@@ -191,7 +255,12 @@ extension Array where Element == MovieModel{
                 script: ["Wes Anderson", "Owen Wilson"],
                 synopsis: "Royal e sua esposa Etheline tiveram três filhos muito diferentes entre si, mas igualmente bem-sucedidos. Quando Etheline resolve se casar com outro, o irresponsável e excêntrico Royal resolve lutar por seu amor reunindo toda a família.",
                 classification: .TWELVE,
-                trailerId: "AbZXt952qjU"
+                trailerId: "AbZXt952qjU",
+                rankings: [
+                    RankingModel(websiteImage: "imdb", ranking: 3),
+                    RankingModel(websiteImage: "metacritic", ranking: 4.5),
+                    RankingModel(websiteImage: "rotten", ranking: 4)
+                ]
             ),
             MovieModel(
                 title: "La La Land",
@@ -202,7 +271,12 @@ extension Array where Element == MovieModel{
                 script: ["Damien Chazelle"],
                 synopsis: "O pianista Sebastian conhece a atriz Mia, e os dois se apaixonam perdidamente. Em busca de oportunidades para suas carreiras na competitiva Los Angeles, os jovens tentam fazer o relacionamento amoroso dar certo, enquanto perseguem fama e sucesso.",
                 classification: .TWELVE,
-                trailerId: "0pdqf4P9MB8"
+                trailerId: "0pdqf4P9MB8",
+                rankings: [
+                    RankingModel(websiteImage: "imdb", ranking: 3),
+                    RankingModel(websiteImage: "metacritic", ranking: 4.5),
+                    RankingModel(websiteImage: "rotten", ranking: 4)
+                ]
             ),
             MovieModel(
                 title: "Os Serviços de Entrega da Kiki",
@@ -213,7 +287,12 @@ extension Array where Element == MovieModel{
                 script: ["Hayao Miyazaki", "Jack Fletcher", "John Semper"],
                 synopsis: "Por ordem de sua mãe, Kiki parte para um aprendizado de um ano, acompanhada por seu gato preto. A um comando de sua vassoura mágica, ela vai parar na charmosa cidadezinha de Moreoastal. Infelizmente, os hotéis locais não aceitam bruxas e a polícia a flagra fazendo algumas travessuras.",
                 classification: .L,
-                trailerId: "4bG17OYs-GA"
+                trailerId: "4bG17OYs-GA",
+                rankings: [
+                    RankingModel(websiteImage: "imdb", ranking: 3),
+                    RankingModel(websiteImage: "metacritic", ranking: 4.5),
+                    RankingModel(websiteImage: "rotten", ranking: 4)
+                ]
             ),
             MovieModel(
                 title: "O Feitiço de Áquila",
@@ -224,7 +303,12 @@ extension Array where Element == MovieModel{
                 script: ["Michael Thomas", "Tom Mankiewicz"],
                 synopsis: "O ladrão Gaston escapa da masmorra medieval de Aquila através da latrina. Os soldados estão prestes a matá-lo quando Navarra o salva. Navarra, viajando com seu falcão animado, planeja matar o bispo de Áquila com a ajuda de Gaston.",
                 classification: .FOURTEEN,
-                trailerId: "2MXq-TdXmd4"
+                trailerId: "2MXq-TdXmd4",
+                rankings: [
+                    RankingModel(websiteImage: "imdb", ranking: 3),
+                    RankingModel(websiteImage: "metacritic", ranking: 4.5),
+                    RankingModel(websiteImage: "rotten", ranking: 4)
+                ]
             ),
             MovieModel(
                 title: "Os Incríveis",
@@ -235,7 +319,12 @@ extension Array where Element == MovieModel{
                 script: ["Brad Bird"],
                 synopsis: "Depois do governo banir o uso de superpoderes, o maior herói do planeta, o Sr. Incrível, vive de forma pacata com sua família. Apesar de estar feliz com a vida doméstica, o Sr. Incrível ainda sente falta dos tempos em que viveu como super-herói, e sua grande chance de entrar em ação novamente surge quando um velho inimigo volta a atacar. Só que agora ele precisa contar com a ajuda de toda a família para vencer o vilão.",
                 classification: .L,
-                trailerId: "ftBvKUAagnU"
+                trailerId: "ftBvKUAagnU",
+                rankings: [
+                    RankingModel(websiteImage: "imdb", ranking: 3),
+                    RankingModel(websiteImage: "metacritic", ranking: 4.5),
+                    RankingModel(websiteImage: "rotten", ranking: 4)
+                ]
             )
         ]
     }
