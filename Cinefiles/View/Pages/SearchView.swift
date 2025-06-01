@@ -22,7 +22,7 @@ struct SearchView: View {
                     Image(systemName: "magnifyingglass")
                         .foregroundColor(.gray)
                     
-                    TextField("Buscar Filme", text: $searchText)
+                    TextField("", text: $searchText, prompt: Text("Buscar Filme").foregroundStyle(Color(uiColor: .systemGray)))
                         .autocapitalization(.none)
                         .disableAutocorrection(true)
                         .tint(.customGreen)

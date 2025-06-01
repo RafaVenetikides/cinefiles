@@ -18,7 +18,11 @@ struct MovieView : View {
                         .frame(width: 100, height: 150)
                     VStack(alignment: .leading, spacing: 14) {
                         Text(movie.title)
+                            .foregroundStyle(.customDarkBlue)
                             .font(.system(size: 20, weight: .semibold))
+                            .multilineTextAlignment(.leading)
+                            .lineLimit(nil)
+                            .fixedSize(horizontal: false, vertical: true)
                             .padding(.horizontal, 12)
                             .padding(.vertical, 6)
                             .background(.customPink)
@@ -133,7 +137,7 @@ struct MovieView : View {
         movie:
         .constant(
             MovieModel(
-                title: "Gigantes de Aço",
+                title: "Tudo em Todo o Lugar ao Mesmo Tempo",
                 year: "2011",
                 length: 127,
                 cover: "filme8",
