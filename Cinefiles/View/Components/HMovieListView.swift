@@ -32,7 +32,20 @@ struct HMovieListView: View {
                         }
                         label: {
                             MovieCellView(movie: $movie)
+                                .contextMenu {
+                                    Button {
+                                        movie.watched.toggle()
+                                    } label: {
+                                        Label(movie.watched ? "assistido" : "não assistido", systemImage: movie.watched ? "eye.fill" : "eye")
+                                    }
+                                    Button {
+                                        movie.is_favorite.toggle()
+                                    } label: {
+                                        Label(movie.is_favorite ? "favorito" : "não favorito", systemImage: movie.is_favorite ? "star.fill" : "star")
+                                    }
+                                }
                         }
+                        
                     }
                 }
                 
