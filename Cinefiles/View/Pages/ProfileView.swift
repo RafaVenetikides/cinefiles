@@ -2,24 +2,33 @@ import SwiftUI
 
 struct ProfileView : View{
     @State private var crrProfilePage : profilePage = .login
+    @StateObject private var moviesData = MovieData.shared
+    
+    private var favoriteMovies: [Binding<MovieModel>] {
+        let allMovies = moviesData.movies
+        return allMovies.enumerated().compactMap { index, movie in
+            guard movie.is_favorite else { return nil }
+            return $moviesData.movies[index]
+        }
+    }
+    
+    private var watchedMovies: [Binding<MovieModel>] {
+        let allMovies = moviesData.movies
+        return allMovies.enumerated().compactMap { index, movie in
+            guard movie.watched else { return nil }
+            return $moviesData.movies[index]
+        }
+    }
     
     var body : some View {
         VStack {
             switch crrProfilePage {
-                case .login:
+            case .login:
                 LoginView(crrProfilePage: $crrProfilePage)
-                case .register:
+            case .register:
                 RegisterView(crrProfilePage:$crrProfilePage)
-                case .profile:
-                    Text("PERFIL\n🐴")
-                    .font(.system(size: 34, weight: .semibold))
-                    .foregroundStyle(.white)
-                    .multilineTextAlignment(.center)
-                    .frame(
-                        maxWidth: .infinity,
-                        maxHeight: .infinity
-                    )
-                    .background(.customDarkBlue)
+            case .profile:
+                UserView(movies: $moviesData.movies)
             }
         }
     }

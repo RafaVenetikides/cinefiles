@@ -10,7 +10,7 @@ struct HMovieListView: View {
     var sectionName: String
     var color: Color
     
-    @StateObject var moviesData = MovieData.shared
+    var movies: [Binding<MovieModel>]
     
     var body: some View {
         VStack (alignment: .leading){
@@ -26,7 +26,7 @@ struct HMovieListView: View {
             
             ScrollView(.horizontal){
                 HStack{
-                    ForEach($moviesData.movies){ $movie in
+                    ForEach(movies){ $movie in
                         NavigationLink{
                             MovieView(movie: $movie)
                         }
@@ -45,6 +45,6 @@ struct HMovieListView: View {
 }
 
 #Preview{
-    HMovieListView(sectionName: "Favoritos da Edna", color: .customGreen)
+    HMovieListView(sectionName: "Favoritos da Edna", color: .customGreen, movies:[])
 }
 
